@@ -1,11 +1,14 @@
 pipeline {
     agent {
-        docker { image 'node:14-alpine' }
+        docker {
+            image 'fangcangorg/dind-alpine:0.02'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
     }
     stages {
-        stage('Test') {
+        stage('Build') {
             steps {
-                sh 'node --version'
+                sh 'docker version'
             }
         }
     }
