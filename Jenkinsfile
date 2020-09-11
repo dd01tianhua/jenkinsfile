@@ -1,11 +1,11 @@
 pipeline {
     agent {
-        docker { image 'node:14-alpine' }
+        docker { image 'fangcangorg/jenkins-inbound-agent:4.3-jdk8-mvn3.6.3-alpine' }
     }
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                sh 'mvn -version && jave --version'
             }
         }
     }
