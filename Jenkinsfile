@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'fangcangorg/jenkins-inbound-agent:4.3-jdk8-mvn3.6.3-alpine'
+                    image ' mvn'
                     args '-v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker'
                 }
             }
